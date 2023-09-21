@@ -14,10 +14,12 @@
 
 
 <head>
-    <title>Admin | Mudra Finance</title>
+    <title>Mudra Finance | Login</title>
     <meta charset="utf-8" />
     <meta name="description" content="
-    Get the perfect loan for your needs at Mudra Finance. We offer personal and business loans with great rates. Let's achieve your financial goals together.
+            The most advanced Bootstrap 5 Admin Theme with 40 unique prebuilt layouts on Themeforest trusted by 100,000 beginners and professionals. Multi-demo, 
+            Dark Mode, RTL support and complete React, Angular, Vue, Asp.Net Core, Rails, Spring, Blazor, Django, Express.js, Node.js, Flask, Symfony & Laravel versions. 
+            Grab your copy now and get life-time updates for free.
         " />
     <meta name="keywords" content="
             metronic, bootstrap, bootstrap 5, angular, VueJs, React, Asp.Net Core, Rails, Spring, Blazor, Django, Express.js, 
@@ -115,7 +117,7 @@
         <!--begin::Authentication - Sign-in -->
         <div class="d-flex flex-column flex-lg-row flex-column-fluid">
             <!--begin::Logo-->
-            <a href="javascript:void(0)" class="d-block d-lg-none mx-auto py-20">
+            <a href="../../../index.html" class="d-block d-lg-none mx-auto py-20">
                 <img alt="Logo" src="<?php echo $path;?>assets/media/logos/logo.png" class="theme-light-show h-100px" />
                 <img alt="Logo" src="<?php echo $path;?>assets/media/logos/logo.png" class="theme-dark-show" />
             </a>
@@ -145,9 +147,6 @@
                             <!--begin::Body-->
                             <div class="card-body">
                                 <!--begin::Heading-->
-                                <div class="mb-5 d-none d-lg-block">
-                                    <img src="../assets/images/logo/logo.jpg" width="30%" alt="">
-                                </div>
                                 <div class="text-start mb-10">
                                     <!--begin::Title-->
                                     <h1 class="text-dark mb-3 fs-3x" data-kt-translate="sign-in-title">
@@ -156,9 +155,9 @@
                                     <!--end::Title-->
 
                                     <!--begin::Text-->
-                                    <!-- <div class="text-gray-400 fw-semibold fs-6" data-kt-translate="general-desc">
+                                    <div class="text-gray-400 fw-semibold fs-6" data-kt-translate="general-desc">
                                         Get unlimited access & earn money
-                                    </div> -->
+                                    </div>
                                     <!--end::Link-->
                                 </div>
                                 <!--begin::Heading-->
@@ -195,6 +194,7 @@
                                 <!--begin::Actions-->
                                 <div class="d-flex flex-stack">
                                     <button id="signin" class="btn btn-primary">Signin</button>
+
                                 </div>
                                 <!--end::Actions-->
                             </div>
@@ -218,7 +218,7 @@
 
             <!--begin::Body-->
             <div class="d-none d-lg-flex flex-lg-row-fluid w-50 bgi-size-cover bgi-position-y-center bgi-position-x-start bgi-no-repeat"
-                style="background-image: url(<?php echo $path;?>assets/images/login/login_cash_1.jpg)">
+                style="background-image: url(<?php echo $path;?>assets/media/auth/bg11.png)">
             </div>
             <!--begin::Body-->
         </div>
