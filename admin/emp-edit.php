@@ -371,7 +371,6 @@ else
                     $('#staticBackdropLabel').html("Delete Employee");
 
                 }
-                
                 $('#staticBackdrop').modal('show');
             });
             $("body").on('click', '#submit_photo', function(){
