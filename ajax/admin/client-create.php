@@ -134,7 +134,7 @@
                             $loan_id = mysqli_insert_id($conn);
 
                             //Collection amount Insert
-                            // $next_due_date = date('Y-m-d', strtotime($date . '1+ month'));
+                            $next_due_date = date('Y-m-d', strtotime($date . '1+ month'));
 
                             mysqli_query($conn, "INSERT INTO `collection_data`(`loan_id`, `emp_id`, `paid_amount`, `status`, `dateTime`, `payment_date`, `next_due_date`) VALUES ('$loan_id','$emp_id','$per_day_charge','Unpaid','$dateTime', '$date', '$next_due_date')");
 
