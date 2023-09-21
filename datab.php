@@ -1,8 +1,8 @@
 <?php
     $server = "localhost";
-    $username = "root";
-    $password = "";
-    $database = "loan";
+    $username = "mudrafinance_test";
+    $password = "Admin@1234$$";
+    $database = "mudrafinance_loan_test";
 
     $conn = mysqli_connect($server, $username, $password, $database);
     if (!$conn)
@@ -13,7 +13,7 @@
     $date = date('Y-m-d');
     $dateTime = date('Y-m-d H:i:s');
 
-    $path = '/mudra/';
+    $path = '/';
 
 
     // session_start();

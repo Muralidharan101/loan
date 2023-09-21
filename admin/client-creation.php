@@ -669,36 +669,6 @@ else
                 }
 
             })
-            $('#resend_now').click(function()
-            {
-                console.log('resent');
-                var fd = new FormData();
-
-                fd.append('send_otp_mobile', send_otp_mobile);
-
-                $.ajax({
-                    url:'<?php echo $path;?>ajax/admin/send-otp.php',
-                    processData: false,
-                    contentType: false,
-                    data: fd,
-                    type: 'post',
-                    success: function(response)
-                    {
-                        var result = JSON.parse(response);
-
-                        if(result.status == 'Success')
-                        {
-                            toastr.success('OTP resent Successfully!', 'Success!');
-                            window.received_otp = result.otp; 
-                        }
-                        else
-                        {
-                            toastr.warning('OTP can\'t be sent!', 'Error!');
-                        }
-                        
-                    }
-                })
-            })
 
             $('#verify_now').click(function()
             {
@@ -747,9 +717,6 @@ else
             $('#loan_method').change(function(){
                 var value = $(this).val();
 
-                $("#client_loan").val("");
-                $("#client_duration").val("");
-
                 if(value == '1')
                 {
                     $(".loan_method").removeClass('d-none');
@@ -764,6 +731,7 @@ else
                     $(".interest2").removeClass('d-none');
 
                 }
+
             })
 
             $('body').on('click', '#verify_otp', function(){
@@ -1042,7 +1010,7 @@ else
                     toastr.warning('Please Fill Client\'s Mobile!', 'Empty Field!');
                     $('#client_mobile').focus();
                 }
-                else if(client_number_verify == 0)
+                else if(client_mobile_verify == 0)
                 {
                     toastr.warning('Please Verify Client\'s Mobile!', 'Empty Field!');
                 }
