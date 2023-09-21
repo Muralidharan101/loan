@@ -510,49 +510,7 @@ else
 </button> -->
 
 <!-- Modal -->
-<div class="modal fade show" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">OTP Verification</h5>
-        <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
-      </div>
-      <div class="modal-body">
-        <div class="client-otp col-12">
-            <div class="form-group">
-                <label for="otp">Enter OTP (Client)</label>
-                <input type="number" name="" id="client_otp" class="form-control" data-type="client">
-                <input type="text" class="otp_client_id" hidden>
-            </div>
-            <div class="message pt-4">
-                <ul>
-                    <li>OTP Sent to this <span class="text-danger">Client</span> Number <b class="client_phone_no">+91 89989XXXX87</b>.</li>
-                    <li>Check Your Message, Enter 6 Digit OTP</li>
-                </ul>
-            </div>
-        </div>
-        <div class="nominee-otp col-12 d-none">
-            <div class="form-group">
-                <label for="otp">Enter OTP (Nominee)</label>
-                <input type="number" name="" id="nominee_otp" class="form-control" data-type="nominee">
-                <!-- <input type="text" class="otp_client_id" hidden> -->
-            </div>
-            <div class="message pt-4">
-                <ul>
-                    <li>OTP Sent to this <span class="text-danger">Nominee</span> Number <b class="nominee_phone_no">+91 89989XXXX87</b>.</li>
-                    <li>Check Your Message, Enter 6 Digit OTP</li>
-                </ul>
-            </div>
-        </div>
-      </div>
-      <div class="modal-footer m-auto">
-        <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Resend</button> -->
-        <button type="button" class="btn btn-primary client-otp" id="verify_otp">Verify OTP</button>
-        <button type="button" class="btn btn-primary nominee-otp d-none" id="nominee_verify_otp">Verify OTP</button>
-      </div>
-    </div>
-  </div>
-</div>
+
 
 <div class="modal fade" id="client_mobile_verify" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -670,6 +628,37 @@ else
 
             })
 
+            $('#resend_now').click(function()
+            {
+                console.log('resent');
+                var fd = new FormData();
+
+                fd.append('send_otp_mobile', send_otp_mobile);
+
+                $.ajax({
+                    url:'<?php echo $path;?>ajax/admin/send-otp.php',
+                    processData: false,
+                    contentType: false,
+                    data: fd,
+                    type: 'post',
+                    success: function(response)
+                    {
+                        var result = JSON.parse(response);
+
+                        if(result.status == 'Success')
+                        {
+                            toastr.success('OTP resent Successfully!', 'Success!');
+                            window.received_otp = result.otp; 
+                        }
+                        else
+                        {
+                            toastr.warning('OTP can\'t be sent!', 'Error!');
+                        }
+                        
+                    }
+                })
+            })
+
             $('#verify_now').click(function()
             {
                 var otp_input = $('#otp_input').val();
@@ -712,37 +701,6 @@ else
 
                 console.log(client_number_verify);
 
-            })
-            
-            $('#resend_now').click(function()
-            {
-                console.log('resent');
-                var fd = new FormData();
-
-                fd.append('send_otp_mobile', send_otp_mobile);
-
-                $.ajax({
-                    url:'<?php echo $path;?>ajax/admin/send-otp.php',
-                    processData: false,
-                    contentType: false,
-                    data: fd,
-                    type: 'post',
-                    success: function(response)
-                    {
-                        var result = JSON.parse(response);
-
-                        if(result.status == 'Success')
-                        {
-                            toastr.success('OTP resent Successfully!', 'Success!');
-                            window.received_otp = result.otp; 
-                        }
-                        else
-                        {
-                            toastr.warning('OTP can\'t be sent!', 'Error!');
-                        }
-                        
-                    }
-                })
             })
 
             $('#loan_method').change(function(){
@@ -1205,7 +1163,7 @@ else
                                 // $(".otp_client_id").val(data.client_id);
                                 // $('#staticBackdrop').modal('show');
                                 $('#create_client').prop('disabled', false);
-                                window.location.href='Loan-List';
+                                window.location.href='Index';
                                 // window.clientMobileAfterCreation = '+91 ' + client_mobile;
                                 // sendOtpAfterClientCreation();
 
