@@ -1,6 +1,7 @@
 <?php
+require_once '../datab.php';
 session_start();
 session_destroy();
 
-header('Location: '.$path.'Login');
+header('Location: '.$path.'client/Login');
 ?>
