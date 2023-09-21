@@ -1,0 +1,38 @@
+RewriteEngine on
+
+RewriteRule ^Index index.php [NC,L]
+
+RewriteRule ^admin/Login admin/login.php [NC,L]
+RewriteRule ^admin/Client-Creation admin/client-creation.php [NC,L]
+RewriteRule ^admin/Emp-Creation admin/emp-creation.php [NC,L]
+RewriteRule ^admin/Emp-List admin/emp-list.php [NC,L]
+RewriteRule ^admin/Loan-List admin/loan-list.php [NC,L]
+RewriteRule ^admin/Index admin/index.php [NC,L]
+RewriteRule ^admin/Report admin/report.php [NC,L]
+RewriteRule ^admin/Pending-Payment admin/pending-payment.php [NC,L]
+
+RewriteRule ^admin/Emp-Edit/([a-zA-Z0-9\-=&_@\.\,\)\(]*)/$ admin/emp-edit.php?emp_id=$1 [NC,L]
+RewriteRule ^admin/Client-Profile/([a-zA-Z0-9\-=&_@\.\,\)\(]*)/$ admin/client-profile.php?client_id=$1 [NC,L]
+
+RewriteRule ^emp/Index emp/index.php [NC,L]
+RewriteRule ^emp/Login emp/login.php [NC,L]
+RewriteRule ^emp/Report emp/report.php [NC,L]
+
+RewriteRule ^client/Index client/index.php [NC,L]
+RewriteRule ^client/Login client/login.php [NC,L]
+RewriteRule ^client/Payment-History client/payment-history.php [NC,L]
+
+ErrorDocument 404 /error-404
+RewriteCond %{REQUEST_URI} ^/404/$
+RewriteRule ^(.*)$ /404.php [L]
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php80” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php80 .php .php8 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit
+RewriteCond %{HTTP_HOST} ^mudrafinance\.co$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.mudrafinance\.co$
+RewriteRule ^/?$ "https\:\/\/www\.mudrafinance\.co\/client\/Login" [R=301,L]
+

@@ -43,7 +43,7 @@
     }
     else if(isset($_POST['password']))
     {
-        $password = mysqli_escape_string($conn, $_POST['emp_id']);
+        $password = mysqli_escape_string($conn, $_POST['password']);
         $enc_pass = md5($password.'Loan');
 
         mysqli_query($conn, " UPDATE `emp_data` SET `emp_password`='$enc_pass',`updatedTime`='$dateTime' WHERE id = '$emp_id'");

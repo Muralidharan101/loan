@@ -241,7 +241,14 @@
             </div>
         </div>
 
-       
+        <!--<style type="text/css" media="print">-->
+        <!--    body * {-->
+        <!--        visibility: hidden;-->
+        <!--    }-->
+        <!--    #printable-modal, #printable-modal * {-->
+        <!--        visibility: visible;-->
+        <!--    }-->
+        <!--</style>-->
 
         <div class="modal fade show" id="paymentHistory_mdal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="paymentHistory_mdalLabel" aria-hidden="true">
             <div class="modal-dialog">
