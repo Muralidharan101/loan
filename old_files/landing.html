@@ -1,0 +1,161 @@
+<?php 
+    $path = 'https://go.toonsouthindia.com/';
+    $mirror_link = '1';
+    if(isset($_GET['link']))
+    {
+        $mirror_link = $_GET['link'];
+    }
+    if($mirror_link == '1')
+    {
+        header('Location: https://www.toonsouthindia.com');
+    }
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TSI Download Page</title>
+    <link href="<?php echo $path;?>assets/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Composite Start in site notificaion -->
+<div id="M808365ScriptRootC1483744">
+</div>
+<script src="https://jsc.adskeeper.co.uk/t/o/toonsouthindia.net.1483744.js" async>
+</script>
+<!-- Composite End -->
+<!-- Composite Start mobile-ad -->
+<div id="M808365ScriptRootC1483728">
+</div>
+<script src="https://jsc.adskeeper.co.uk/t/o/toonsouthindia.net.1483728.js" async>
+</script>
+<!-- Composite End -->
+
+    
+</head>
+<style>
+    .tsi-download-links{
+        background: #3030304f;
+    padding: 40px 0px;
+    /* border: 2px solid; */
+    border-radius: 20px;
+    box-shadow: 4px 5px 19px 2px #000;
+    }
+    .tsi-resolution h4{
+        padding-left: 10px;
+    }
+    a{
+        text-decoration:none;
+    }
+    body{
+    min-height:800px;
+        background-image: linear-gradient(#600000, #020202);
+       background-size: auto 100%;
+    }
+</style>
+<body class="text-white">
+    <div class="tsi-header text-center py-5">
+        <h4 class="text-white">
+           __\\ TSI Download Page //__
+        </h4>
+        <!-- <small>toonsouthindia.com</small> -->
+        <div class="ads mt-4">
+            <a href="https://telegram.me/+VQNviznAktwAxUv8">
+                <span class="badge bg-secondary">Telegram</span>
+            </a>
+            <a href="https://toonsouthindia.com">
+                <span class="badge bg-secondary">Cartoons</span>
+            </a>
+            <a href="https://toonsouthindia.com/anime">
+                <span class="badge bg-secondary">Anime</span>
+            </a>
+            <a href="https://tamilhd.fun">
+                <span class="badge bg-secondary">Movies</span>
+            </a>
+        </div>
+    </div>
+    <div class="container text-center">
+        <div class="counter">
+            <p class="pb-3"> ---Please Wait--- </p>
+            <img src="https://i.gifer.com/4tym.gif" alt="" width="150">
+            <div class="progress mb-5">
+                <div class="progress-bar progress-bar-striped bg-danger progress-bar-animated" role="progressbar" aria-valuenow="10"
+                aria-valuemin="0" aria-valuemax="10" style="width:0%">
+                </div>
+            </div>
+            <span class="message mt-5">Scanning Link...</span>
+
+        </div>
+        <div class="get-link-btn py-5 my-5 d-none">
+        <p>Link Generated.! Click Below Button..!</p>
+		<!-- Composite Start side bar 2x3 -->
+<div id="M808365ScriptRootC1483740">
+</div>
+<script src="https://jsc.adskeeper.co.uk/t/o/toonsouthindia.net.1483740.js" async>
+</script>
+<!-- Composite End -->
+
+        <p>Thanks for Using Toonsouthindia.com</p>
+            <button class="btn btn-success" id="get_link">GET Link</button>
+        </div>
+        
+        <div class="col-12 py-4 mt-5 text-start disclaimer d-none">
+                <b class="text-danger">Disclaimer:</b>
+                    <p>
+                        Toonsouthindia Does not Stored any Files on This Server. All files or contents are hosted on Google Drive and other sites. Toonsouthindia does not accept responsibility for contents hosted on third party websites. We just index those links which are already available in internet.
+                    </p>
+                
+        </div>
+        <div class="col-12 mt-5 pt-5">
+            <div class="footer">
+                <p>Made By <span class="text-warning">TSI Team</span></p>
+            </div>
+        </div>
+    </div>
+    <script src="<?php echo $path;?>assets/js/jquery.min.js"></script>
+    <script src="<?php echo $path;?>assets/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#get_link').click(function(){
+                $('.tsi-download-links').removeClass('d-none');
+                $('.disclaimer').removeClass('d-none');
+                $('.get-link-btn').addClass('d-none');
+
+                var expirationDate = new Date();
+                expirationDate.setTime(expirationDate.getTime() + (2 * 60 * 60 * 1000)); // 2 hours in milliseconds
+
+                document.cookie = "tsi_dl_id=<?php echo $mirror_link;?>; expires=" + expirationDate.toUTCString() + "; path=/";
+
+                window.open('<?php echo $mirror_link;?>', '_blank');
+                window.location.href="//intorterraon.com/4/6076475";
+
+            });
+            
+            var count = 0;
+            var interval = setInterval(function() {
+            // $('.count_numer').html(count);
+            $('.progress-bar').css('width', count+'0%');
+            count++;
+
+            if (count > 10) {
+                clearInterval(interval);
+            }
+            if(count == 3){
+                $('.message').html("Decrypting Link.");
+            }
+            if(count == 6){
+                $('.message').html("Generating Download Links, Plase Wait..!");
+            }
+            if(count == 10)
+            {
+                $('.counter').addClass('d-none');
+                $('.get-link-btn').removeClass('d-none');
+                // $('.disclaimer').removeClass('d-none');
+            }
+            }, 1000);
+      
+        });
+    </script>
+ 
+</body>
+</html>
