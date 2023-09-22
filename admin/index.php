@@ -174,7 +174,7 @@
                                             <div class="card">
                                                 <div class="card-body text-center">
                                                     <?php
-                                                        $tot_col = mysqli_query($conn, "SELECT *, SUM(paid_amount) as total_collection FROM collection_data WHERE status = 'Paid'");
+                                                        $tot_col = mysqli_query($conn, "SELECT *, SUM(paid_amount) as total_collection FROM collection_data WHERE status = 'paid'");
                                                     ?>
                                                     <span
                                                         class="fs-4 fw-semibold text-gray-400 me-1 align-self-start">₹</span>

@@ -3,5 +3,5 @@ require_once '../datab.php';
 session_start();
 session_destroy();
 
-header('Location: '.$path.'/admin/Login');
+header('Location: '.$path.'admin/Login');
 ?>

@@ -402,7 +402,9 @@ else
                            if(data.status == "Ok")
                            {
                             toastr.success('Emp Photo changed!', 'Success!');
-                            
+                            setTimeout(() => {
+                                location.reload();   
+                            }, 1000);
                            }
                            else if(data.status == 'Bigfile')
                            {
@@ -448,8 +450,7 @@ else
                            var data = JSON.parse(response);
                            if(data.status == "Ok")
                            {
-                            toastr.success('Emp Photo changed!', 'Success!');
-                            
+                            toastr.success('password changed!', 'Success!');
                            }
                            else
                            {
