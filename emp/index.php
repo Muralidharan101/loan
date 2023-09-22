@@ -224,7 +224,7 @@ else
                                                                 <td><?php echo $pend['mobile'];?></td>
                                                                 <td><?php echo $pend['alt_mobile'];?></td>
                                                                 <td class="pay_amount"><?php echo $pend['payable_amt'];?></td>
-                                                                <td><button class="btn btn-success btn-sm paid_btn">Paid</button></td>
+                                                                <td><button class="btn btn-success btn-sm paid_btn">Pay</button></td>
                                                             </tr>
                                                             <?php };?>
                                                         </tbody>

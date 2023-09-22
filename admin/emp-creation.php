@@ -182,7 +182,7 @@ else
                                     <div class="row py-4">
                                         <div class="col-lg-6 col-sm-6 col-xs-12 col-12 pt-3">
                                             <div class="form-group">
-                                                <label for="emp_name">Name</label>
+                                                <label for="emp_name">Name<span class="text-danger">*</span></label>
                                                 <input type="text" class="form-control" id="emp_name">
                                             </div>
                                         </div>
@@ -194,19 +194,19 @@ else
                                         </div>
                                         <div class="col-lg-3 col-sm-6 col-xs-6 col-12 pt-3">
                                             <div class="form-group">
-                                                <label for="emp_dob">DOB</label>
+                                                <label for="emp_dob">DOB<span class="text-danger">*</span></label>
                                                 <input type="date" class="form-control" id="emp_dob">
                                             </div>
                                         </div>
                                         <div class="col-lg-6 col-sm-6 col-xs-12 col-12 pt-3">
                                             <div class="form-group">
-                                                <label for="emp_photo">Photo</label>
+                                                <label for="emp_photo">Photo<span class="text-danger">*</span></label>
                                                 <input type="file" class="form-control" id="emp_photo">
                                             </div>
                                         </div>
                                         <div class="col-lg-3 col-sm-6 col-xs-6 col-12 pt-3">
                                             <div class="form-group">
-                                                <label for="emp_mobile">Mobile</label>
+                                                <label for="emp_mobile">Mobile<span class="text-danger">*</span></label>
                                                 <input type="number" class="form-control" id="emp_mobile" maxlength="12">
                                             </div>
                                         </div>
@@ -218,25 +218,25 @@ else
                                         </div>
                                         <div class="col-lg-9 col-sm-9 col-xs-12 col-12 pt-3">
                                             <div class="form-group">
-                                                <label for="emp_address">Address</label>
+                                                <label for="emp_address">Address<span class="text-danger">*</span></label>
                                                 <input type="text" class="form-control" id="emp_address">
                                             </div>
                                         </div>
                                         <div class="col-lg-3 col-sm-3 col-xs-6 col-12 pt-3">
                                             <div class="form-group">
-                                                <label for="emp_join_date">Joining Date</label>
+                                                <label for="emp_join_date">Joining Date<span class="text-danger">*</span></label>
                                                 <input type="date" class="form-control" id="emp_join_date">
                                             </div>
                                         </div>
                                         <div class="col-lg-6 col-sm-6 col-xs-6 col-12 pt-3">
                                             <div class="form-group">
-                                                <label for="emp_username">Username</label>
+                                                <label for="emp_username">Username<span class="text-danger">*</span></label>
                                                 <input type="text" class="form-control" id="emp_username">
                                             </div>
                                         </div>
                                         <div class="col-lg-6 col-sm-6 col-xs-6 col-12 pt-3">
                                             <div class="form-group">
-                                                <label for="emp_password">Password</label>
+                                                <label for="emp_password">Password<span class="text-danger">*</span></label>
                                                 <input type="text" class="form-control" id="emp_password">
                                             </div>
                                         </div>

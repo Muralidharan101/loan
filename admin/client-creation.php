@@ -706,6 +706,10 @@ else
             $('#loan_method').change(function(){
                 var value = $(this).val();
 
+                $('#client_loan').val("");
+                $('#client_duration').val("");
+
+
                 if(value == '1')
                 {
                     $(".loan_method").removeClass('d-none');
@@ -893,7 +897,7 @@ else
                     $("#sum_loan_daily_charge").html('₹'+parseInt(perday_payment_with_interest)).attr('data-value', parseInt(perday_payment_with_interest));
                     $("#sum_loan_interest").html('₹'+total_interest_amount+'(Rate of Interest)').attr('data-value', total_interest_amount);
 
-                    var final_debit_amt = loan_value - parseInt(perday_payment_with_interest); // - parseInt(round_amount_charge_percentage_amount) Need to sub Document charge
+                    var final_debit_amt = loan_value - parseInt(perday_payment_with_interest) - parseInt(round_amount_charge_percentage_amount) ; //Need to sub Document charge
                     var total_credit_amt = parseInt(loan_value) + parseInt(total_interest_amount);
                     $("#sum_loan_debit").html('₹'+final_debit_amt).attr('data-value', final_debit_amt);
                     $("#sum_loan_credit").html('₹'+total_credit_amt).attr('data-value', total_credit_amt);
