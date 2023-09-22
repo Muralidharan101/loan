@@ -43,13 +43,21 @@
     }
     else if(isset($_POST['password']))
     {
-        $password = mysqli_escape_string($conn, $_POST['emp_id']);
+        $password = mysqli_escape_string($conn, $_POST['password']);
         $enc_pass = md5($password.'Loan');
 
-        mysqli_query($conn, " UPDATE `emp_data` SET `emp_password`='$enc_pass',`updatedTime`='$dateTime' WHERE id = '$emp_id'");
+        $pass_change = " UPDATE `emp_data` SET `emp_password`='$enc_pass',`updatedTime`='$dateTime' WHERE id = '$emp_id'";
 
-        $res['status'] = 'Ok';
-        $res['remarks'] = 'Password updated!'; 
+        if(mysqli_query($conn, $pass_change))
+        {
+            $res['status'] = 'Ok';
+            $res['remarks'] = 'Password updated!'; 
+        }
+        else
+        {
+            $res['status']  = 'Failed';
+            $res['remarks'] = 'Failed to update password';
+        }
     }
     else if(isset($_POST['delete']))
     {
